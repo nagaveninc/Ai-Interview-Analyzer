@@ -1,0 +1,702 @@
+/* ===========================================
+      AI INTERVIEW ANALYZER LOGIN
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
+
+    position:relative;
+
+}
+
+/* Animated Background */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#6C63FF;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+top:-150px;
+
+left:-120px;
+
+opacity:.45;
+
+animation:move1 8s ease-in-out infinite;
+
+}
+
+body::after{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:#00D4FF;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+bottom:-150px;
+
+right:-100px;
+
+opacity:.35;
+
+animation:move2 9s ease-in-out infinite;
+
+}
+
+@keyframes move1{
+
+0%,100%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(80px,60px);
+
+}
+
+}
+
+@keyframes move2{
+
+0%,100%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(-80px,-50px);
+
+}
+
+}
+
+/* Container */
+
+.container{
+
+position:relative;
+
+z-index:5;
+
+width:1200px;
+
+max-width:92%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+}
+
+/* LEFT */
+
+.left{
+
+padding:70px;
+
+color:white;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:24px;
+
+font-weight:700;
+
+margin-bottom:40px;
+
+}
+
+.logo i{
+
+font-size:32px;
+
+color:#00D4FF;
+
+}
+
+.left h1{
+
+font-size:52px;
+
+margin-bottom:20px;
+
+line-height:1.2;
+
+}
+
+.left p{
+
+color:#d1d5db;
+
+line-height:30px;
+
+margin-bottom:40px;
+
+font-size:17px;
+
+}
+
+.features{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.feature{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+font-size:17px;
+
+}
+
+.feature i{
+
+color:#00D4FF;
+
+font-size:22px;
+
+}
+/* ===========================================
+                RIGHT SIDE
+=========================================== */
+
+.right{
+
+    background:rgba(255,255,255,.04);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.login-form{
+
+    width:100%;
+
+    max-width:420px;
+
+}
+
+.login-form h2{
+
+    text-align:center;
+
+    color:#fff;
+
+    font-size:38px;
+
+    margin-bottom:35px;
+
+    font-weight:700;
+
+}
+
+/* INPUTS */
+
+.input-box{
+
+    position:relative;
+
+    margin-bottom:22px;
+
+}
+
+.input-box i:first-child{
+
+    position:absolute;
+
+    left:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#94A3B8;
+
+    font-size:18px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    padding:18px 55px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.input-box input:focus{
+
+    border-color:#00D4FF;
+
+    box-shadow:0 0 20px rgba(0,212,255,.25);
+
+}
+
+.input-box input::placeholder{
+
+    color:#bfc9d4;
+
+}
+
+#togglePassword{
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#94A3B8;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+/* OPTIONS */
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:28px;
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+.options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.options input{
+
+    accent-color:#00D4FF;
+
+}
+
+.options a{
+
+    color:#00D4FF;
+
+    text-decoration:none;
+
+}
+
+.options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* LOGIN BUTTON */
+
+.login-form button{
+
+    width:100%;
+
+    padding:17px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#6C63FF,#00D4FF);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.login-form button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 35px rgba(0,212,255,.35);
+
+}
+
+/* DIVIDER */
+
+.divider{
+
+    margin:28px 0;
+
+    text-align:center;
+
+    color:#94A3B8;
+
+    position:relative;
+
+}
+
+.divider::before,
+
+.divider::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:38%;
+
+    height:1px;
+
+    background:rgba(255,255,255,.15);
+
+    top:50%;
+
+}
+
+.divider::before{
+
+    left:0;
+
+}
+
+.divider::after{
+
+    right:0;
+
+}
+
+/* LINKS */
+
+.signup,
+
+.home{
+
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    transition:.35s;
+
+    margin-top:12px;
+
+}
+
+.signup{
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+}
+
+.signup:hover{
+
+    background:#6C63FF;
+
+}
+
+.home{
+
+    color:#00D4FF;
+
+}
+
+.home:hover{
+
+    color:white;
+
+}
+/* ===========================================
+        INPUT ANIMATIONS
+=========================================== */
+
+.input-box input:hover{
+
+    border-color:#6C63FF;
+
+    transform:translateY(-2px);
+
+}
+
+.login-form button:active{
+
+    transform:scale(.98);
+
+}
+
+/* ===========================================
+        SCROLLBAR
+=========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#6C63FF,#00D4FF);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+/* ===========================================
+        CARD ANIMATION
+=========================================== */
+
+.container{
+
+    animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================================
+        RESPONSIVE
+=========================================== */
+
+@media(max-width:992px){
+
+.container{
+
+    grid-template-columns:1fr;
+
+}
+
+.left{
+
+    display:none;
+
+}
+
+.right{
+
+    padding:40px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.right{
+
+    padding:25px;
+
+}
+
+.login-form h2{
+
+    font-size:30px;
+
+}
+
+.input-box input{
+
+    padding:15px 50px;
+
+    font-size:15px;
+
+}
+
+.login-form button{
+
+    padding:15px;
+
+    font-size:16px;
+
+}
+
+.options{
+
+    flex-direction:column;
+
+    gap:12px;
+
+    align-items:flex-start;
+
+}
+
+}
+
+/* ===========================================
+        FOCUS EFFECTS
+=========================================== */
+
+.login-form input:focus{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.signup,
+.home,
+button{
+
+    transition:all .35s ease;
+
+}
+
+.feature{
+
+    transition:.35s;
+
+}
+
+.feature:hover{
+
+    transform:translateX(10px);
+
+    color:#00D4FF;
+
+}

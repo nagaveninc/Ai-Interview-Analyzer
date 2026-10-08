@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Interview Analyzer - Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🤖 AI Interview Analyzer
+        </div>
+
+        <div class="profile">
+
+            <div class="profile-icon">
+                <i class="bi bi-person-circle"></i>
+            </div>
+
+            <h3>{{ username }}</h3>
+
+            <p>Candidate</p>
+
+        </div>
+
+        <nav>
+
+            <a href="/dashboard" class="active">
+                <i class="bi bi-house"></i>
+                Dashboard
+            </a>
+
+            <a href="/interview">
+                <i class="bi bi-mic"></i>
+                AI Interview
+            </a>
+
+            <a href="/resume">
+                <i class="bi bi-file-earmark-text"></i>
+                Resume Upload
+            </a>
+
+            <a href="/report">
+                <i class="bi bi-bar-chart"></i>
+                Interview Report
+            </a>
+
+            <a href="/logout">
+                <i class="bi bi-box-arrow-right"></i>
+                Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <div class="topbar">
+
+            <div>
+                <h1>Welcome, {{ username }} 👋</h1>
+
+                <p>
+                    Manage your resume, practice interviews and view your AI analysis.
+                </p>
+            </div>
+
+            <a href="/logout" class="logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+
+        <!-- WELCOME CARD -->
+
+        <section class="welcome-card">
+
+            <div>
+
+                <h2>AI-Powered Career Preparation 🚀</h2>
+
+                <p>
+                    Upload your resume and practice an AI-powered interview
+                    to evaluate your performance.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <h2 class="section-title">Quick Actions</h2>
+
+        <div class="action-grid">
+
+
+            <!-- INTERVIEW -->
+
+            <div class="action-card">
+
+                <div class="icon">
+                    🎤
+                </div>
+
+                <h3>AI Interview</h3>
+
+                <p>
+                    Practice interview questions using speech recognition
+                    and receive AI-based feedback.
+                </p>
+
+                <a href="/interview">
+                    Start Interview →
+                </a>
+
+            </div>
+
+
+            <!-- RESUME -->
+
+            <div class="action-card">
+
+                <div class="icon">
+                    📄
+                </div>
+
+                <h3>Resume Analyzer</h3>
+
+                <p>
+                    Upload your resume and analyze your skills and ATS score.
+                </p>
+
+                <a href="/resume">
+                    Upload Resume →
+                </a>
+
+            </div>
+
+
+            <!-- REPORT -->
+
+            <div class="action-card">
+
+                <div class="icon">
+                    📊
+                </div>
+
+                <h3>Interview Report</h3>
+
+                <p>
+                    View your interview score, sentiment,
+                    filler words and overall performance.
+                </p>
+
+                <a href="/report">
+                    View Report →
+                </a>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="action-card">
+
+                <div class="icon">
+                    👤
+                </div>
+
+                <h3>My Account</h3>
+
+                <p>
+                    Your account and interview activity are securely
+                    managed through your dashboard.
+                </p>
+
+                <a href="/dashboard">
+                    View Dashboard →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT FEATURES -->
+
+        <h2 class="section-title">AI Features</h2>
+
+        <div class="features">
+
+            <div class="feature">
+                <span>🎙️</span>
+                <div>
+                    <h3>Speech Recognition</h3>
+                    <p>Converts your spoken interview answers into text.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>😊</span>
+                <div>
+                    <h3>Sentiment Analysis</h3>
+                    <p>Analyzes the tone of your interview answers.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>🗣️</span>
+                <div>
+                    <h3>Filler Word Detection</h3>
+                    <p>Identifies unnecessary filler words in your answers.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>⭐</span>
+                <div>
+                    <h3>AI Scoring</h3>
+                    <p>Generates an overall interview performance score.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>📄</span>
+                <div>
+                    <h3>Resume Analysis</h3>
+                    <p>Checks technical skills and generates an ATS score.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>📊</span>
+                <div>
+                    <h3>Performance Report</h3>
+                    <p>Shows your interview analysis in one place.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                AI Interview Analyzer © 2026
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>

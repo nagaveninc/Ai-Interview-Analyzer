@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Interview Report</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/report.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="report-container">
+
+    <h1>📊 AI Interview Report</h1>
+
+    <h3>Candidate: {{ username }}</h3>
+
+    <!-- Overall Score -->
+
+    <div class="overall-card">
+
+        <h2>Overall Score</h2>
+
+        <div class="score">
+            {{ overall_score }}/100
+        </div>
+
+        <h3>{{ overall_grade }}</h3>
+
+    </div>
+
+
+    <!-- Individual Answers -->
+
+    {% for item in results %}
+
+    <div class="answer-card">
+
+        <h2>Question {{ loop.index }}</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            {{ item.question }}
+        </p>
+
+        <div class="answer">
+
+            <strong>Your Answer:</strong>
+
+            <p>{{ item.answer }}</p>
+
+        </div>
+
+
+        <div class="analysis">
+
+            <div class="analysis-box">
+
+                <h4>⭐ Score</h4>
+
+                <p>{{ item.score }}/100</p>
+
+            </div>
+
+
+            <div class="analysis-box">
+
+                <h4>😊 Sentiment</h4>
+
+                <p>{{ item.sentiment }}</p>
+
+            </div>
+
+
+            <div class="analysis-box">
+
+                <h4>🗣️ Filler Words</h4>
+
+                <p>{{ item.filler_count }}</p>
+
+            </div>
+
+
+            <div class="analysis-box">
+
+                <h4>🏆 Grade</h4>
+
+                <p>{{ item.grade }}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+
+    <div class="buttons">
+
+        <a href="/dashboard">
+            ← Dashboard
+        </a>
+
+        <a href="/interview">
+            🎤 New Interview
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

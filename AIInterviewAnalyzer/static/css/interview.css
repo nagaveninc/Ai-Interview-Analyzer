@@ -1,0 +1,131 @@
+/* ===========================
+   AI Interview Page
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    text-align:center;
+}
+
+h1{
+    font-size:38px;
+    margin-bottom:10px;
+    color:#00D4FF;
+}
+
+h3{
+    margin-bottom:35px;
+    color:#CBD5E1;
+}
+
+.question-box{
+    background:rgba(255,255,255,.07);
+    border-radius:15px;
+    padding:30px;
+    margin-bottom:40px;
+}
+
+.question-box h2{
+    color:#00D4FF;
+    margin-bottom:15px;
+}
+
+.question-box p{
+    font-size:22px;
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.buttons button{
+    border:none;
+    border-radius:50px;
+    padding:16px 28px;
+    background:linear-gradient(135deg,#6C63FF,#00D4FF);
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.buttons button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,212,255,.35);
+}
+
+@media(max-width:768px){
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .buttons button{
+        width:100%;
+    }
+
+    .container{
+        width:95%;
+        padding:25px;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .question-box p{
+        font-size:18px;
+    }
+}
+.answer-box{
+    margin-top:40px;
+    text-align:left;
+}
+
+.answer-box h3{
+    margin-bottom:12px;
+}
+
+.answer-box textarea{
+    width:100%;
+    height:180px;
+    border:none;
+    border-radius:15px;
+    padding:20px;
+    font-size:16px;
+    resize:none;
+    outline:none;
+    background:rgba(255,255,255,.08);
+    color:white;
+}
+
+.answer-box textarea::placeholder{
+    color:#ddd;
+}
